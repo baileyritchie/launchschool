@@ -10,7 +10,7 @@
   print the variable when the loop is finished
   
   FORMAL pseudocode
-  
+
   START
 
   SET result = ""
@@ -22,3 +22,13 @@
   END
 
 */
+
+joinString = (arr) => {
+  let result = "";
+  arr.forEach((elm)=>{
+    result += elm
+  })
+  return result;
+}
+
+console.log(joinString(["a","b","c","d"]));

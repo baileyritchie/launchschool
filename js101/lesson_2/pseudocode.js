@@ -1,6 +1,5 @@
 // A practice problem focusing on informal and formal pseudocode
-
-// a function that takes an array of strings, 
+// a function that takes an array of strings
 // and returns a string that is all those strings concatenated together
 
 /* INFORMAL
@@ -8,7 +7,6 @@
   iterate through the array of strings
     for each element in the array, add it to the variable created earlier
   print the variable when the loop is finished
-  
   FORMAL pseudocode
 
   START
@@ -23,12 +21,12 @@
 
 */
 
-joinString = (arr) => {
+const joinString = (arr) => {
   let result = "";
-  arr.forEach((elm)=>{
-    result += elm
-  })
+  arr.forEach((elm) => {
+    result += elm;
+  });
   return result;
-}
+};
 
 console.log(joinString(["a","b","c","d"]));

@@ -14,6 +14,10 @@ function invalidNumber(num) {
 }
 
 prompt("Welcome to Calculator!");
+// TODO call beginCalculating function and add a feature
+// that allows users to KEEP calculating
+// TODO Transfer messages(prompt text) to config file
+// TODO make process to send config file messages to translation service
 
 prompt("What's the first number?");
 let num1 = readline.question();

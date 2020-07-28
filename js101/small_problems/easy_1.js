@@ -62,6 +62,84 @@ getTotalBill = (bill,totalTipAmount) => {
 };
 
 prompt(`The tip is: ${getTipAmount(bill,tipPercent)}`);
-
 prompt(`The total bill is is: ${getTotalBill(bill,getTipAmount(bill,tipPercent))}`);
 
+// sum or product of consecutive integers
+prompt('Please enter an integer that is greater than 0.');
+let endingInt = readline.question();
+
+prompt("Please enter 's' to compute the sum or 'p' to compute the product");
+let responseType = readline.question();
+
+if (responseType === 's') {
+  let total = 0;
+  for (let num = 1; num <= endingInt; num += 1) {
+    total += num;
+  }
+  console.log(`The sum of the integers between 1 and ${endingInt} is ${total}.`);
+} else if (responseType === 'p') {
+  let total = 1;
+  for (let num = 1; num <= endingInt; num += 1) {
+    total *= num;
+  }
+  console.log(`The sum of the integers between 1 and ${endingInt} is ${total}.`);
+} else {
+  prompt("Sorry that's not a valid response.");
+}
+
+function shortLongShort (firstStr,secondStr) {
+  if (firstStr.length > secondStr.length) {
+    let copiedSecond = secondStr;
+    return secondStr.concat(firstStr).concat(copiedSecond);
+  } else if ( secondStr.length > firstStr.length) {
+    let copiedFirst = firstStr;
+    return firstStr.concat(secondStr).concat(copiedFirst);
+  }
+}
+console.log(shortLongShort('abcde','fgh'));
+
+// Leap Years Part One
+
+function isLeapYear (year) {
+  if (year >= 1752) {
+    return console.log((year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0));
+  }
+  return console.log((year % 4 === 0));
+}
+
+isLeapYear(1752);      // true
+isLeapYear(1700);      // true
+isLeapYear(1);         // false
+isLeapYear(100);       // true
+isLeapYear(400);
+
+const reducer = (accum,item) => {
+  return accum + item;
+};
+const isMult = (number) => {
+  if (number % 3 === 0 || number % 5 === 0) {
+    return true;
+  }
+  return false;
+};
+function multisum(num) {
+  let array = Array.from(Array(num), (_,index) => index + 1);
+  // filter so that the array only consists of 3 and 5 mults
+  let finalArray = array.filter( number => isMult(number) );
+  return finalArray.reduce(reducer,0);
+}
+
+console.log(multisum(10));
+
+//ASCII String Value
+
+function asciiValue (stringInput) {
+  let str = stringInput.split("");
+  let stringValue = 0;
+  str.forEach((val) => {
+    stringValue += val.charCodeAt(0);
+  });
+  return stringValue;
+}
+
+console.log(asciiValue('Four score'));
